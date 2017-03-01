@@ -129,6 +129,12 @@ df -h
 # tmpfs           100M     0  100M   0% /run/user/0
 ```
 
+#### Mount a FAT32 USB device
+
+```sh
+$ mount -t vfat /dev/sdb1 /media/usb
+```
+
 ### Users and Groups
 
 #### Add a existing user to existing group

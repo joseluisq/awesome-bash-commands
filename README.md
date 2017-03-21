@@ -137,7 +137,7 @@ $ mount -t vfat /dev/sdb1 /media/usb
 
 ### Users and Groups
 
-#### Add a existing user to existing group
+#### Add an existing user to existing group
 
 ```sh
 usermod -a -G ftp john
@@ -146,6 +146,14 @@ usermod -a -G ftp john
 ### Network
 
 ### Miscellaneous
+
+#### Generate 1 million of unique random phone numbers
+This command generate one million of unique random phone numbers (random permutations) fast using GNU/Linux [shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html) command.
+Use `sed` command for customize each number format. For example for add some prefix or suffix. Remember `shuf` is not limited to numbers only.
+
+```sh
+shuf -i 100000000-999999999 -n 1000000 | sed -e 's/^/51/' > gsm.txt
+```
 
 ### Other Awesome Lists
 - [awesome-shell](https://github.com/alebcay/awesome-shell)

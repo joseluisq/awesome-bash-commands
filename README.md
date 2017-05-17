@@ -145,6 +145,14 @@ usermod -a -G ftp john
 
 ### Network
 
+#### Show current IP address
+
+```sh
+ifconfig | awk '/<UP,BROADCAST,RUNNING,MULTICAST>/ { getline; print $2 }'
+# or
+ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1
+```
+
 ### Miscellaneous
 
 #### Generate 1 million of unique random phone numbers

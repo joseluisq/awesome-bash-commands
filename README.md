@@ -85,7 +85,7 @@ du -sh /var/log
 find /usr/local/apache/logs/archive/ -name '*2017.gz' -delete
 ```
 
-#### Move files using a RegExp
+#### Move files by pattern
 
 _This command move all `*.js` files into `*.ts` files (move equivalent)_
 

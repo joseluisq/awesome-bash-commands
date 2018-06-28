@@ -140,7 +140,13 @@ df -h
 #### Mount a FAT32 USB device
 
 ```sh
-$ mount -t vfat /dev/sdb1 /media/usb
+mount -t vfat /dev/sdb1 /media/usb
+```
+
+#### Increase /tmp directory size
+
+```sh
+mount -o remount,size=5G /tmp/
 ```
 
 ### Users and Groups

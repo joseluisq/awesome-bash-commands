@@ -28,9 +28,9 @@
 #### List files sorted by extension
 
 ```sh
-$ ls -l -X
+ls -l -X
 # Or
-$ ls -l --sort=extension
+ls -l --sort=extension
 ```
 
 #### Create a symbolic link for one directory or file
@@ -56,15 +56,15 @@ find ./my/current/directory -name ".gitignore" -type f -delete
 Copy shell command output to cilpboard
 
 ```sh
-$ cat myfile.txt | xclip -selection c
+cat myfile.txt | xclip -selection c
 ```
 
 #### Copy entire directory to destination
 
 ```sh
-$ cp -avr /my/current/directory /destination/directory
+cp -avr /my/current/directory /destination/directory
 # Or
-$ rsync -av /my/current/directory /destination/directory
+rsync -av /my/current/directory /destination/directory
 ```
 
 #### Show the space usage of file or directory
@@ -91,6 +91,12 @@ _This command move all `*.js` files into `*.ts` files (move equivalent)_
 
 ```sh
 find src/ -type f -name "*.js" -exec bash -c 'mv {} `echo {} | sed -e "s/.js/.ts/g"`' \;
+```
+
+#### Clean /tmp directory
+
+```sh
+rm -rf /tmp/* /tmp/.*
 ```
 
 ### Paths

@@ -99,6 +99,21 @@ find src/ -type f -name "*.js" -exec bash -c 'mv {} `echo {} | sed -e "s/.js/.ts
 rm -rf /tmp/* /tmp/.*
 ```
 
+#### Calculate gzip size of one uncompress file
+
+```sh
+gzip -c FILENAME.txt | wc -c | awk '{
+if ($1 > 1000) {
+  print($1 / 1000"K")
+} else if ($1 > 2000) {
+  print($1 / (1000 ^ 2)"M")
+} else {
+  print($1)"b"
+}}'
+
+# 560K
+```
+
 ### Paths
 
 #### Show the full path of (shell) commands

@@ -103,10 +103,12 @@ rm -rf /tmp/* /tmp/.*
 
 ```sh
 gzip -c FILENAME.txt | wc -c | awk '{
-if ($1 > 1000) {
-  print($1 / 1000"K")
-} else if ($1 > 2000) {
+if ($1 > 1000 ^ 3) {
+  print($1 / (1000 ^ 3)"G")
+} else if ($1 > 1000 ^ 2) {
   print($1 / (1000 ^ 2)"M")
+} else if ($1 > 1000) {
+  print($1 / 1000"K")
 } else {
   print($1)"b"
 }}'

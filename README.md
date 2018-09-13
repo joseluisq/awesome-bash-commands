@@ -204,6 +204,31 @@ ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ pr
 
 ### Miscellaneous
 
+#### Generate random mumbers
+
+```sh
+od -vAn -N64 < /dev/urandom | tr '\n' ' ' | sed "s/ //g" | head -c 32
+# 03121617301002504516642404031105
+```
+
+_Change `head` value to trucate to expected length._
+
+#### Generate a random alphanumeric
+
+```sh
+od -vAn -N64 < /dev/urandom | tr '\n' ' ' | sed "s/ //g" |  base64 | sed "s/=//g" | head -c 32
+# MDUyMzQ1MDczMTM1MTM1Mzc3MDEzMzA3
+```
+
+#### Generate a random hash
+
+```sh
+od -vAn -N64 < /dev/urandom | tr '\n' ' ' | sed "s/ //g" | openssl dgst -sha256 | sed "s/-//g"
+# 7adf57e0a90b32ce0e1f446268dbd62b583c649a2e71a426519c6e9c0006b143
+```
+
+_Openssl digest algorithms supported: `md5`, `md4`, `md2`, `sha1`, `sha`, `sha224`, `sha256`, `sha384`, `sha512`, `mdc2` and `ripemd160`_
+
 #### Generate 1 million of unique random phone numbers
 This command generate one million of unique random phone numbers (random permutations) fast using GNU/Linux [shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html) command.
 Use `sed` command for customize each number format. For example for add some prefix or suffix. Remember `shuf` is not limited to numbers only.

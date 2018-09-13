@@ -19,6 +19,7 @@
 - [Paths](#paths)
 - [Devices](#devices)
 - [Users and Groups](#user-and-group)
+- [Date & Time](#date-time)
 - [Network](#network)
 - [Miscellaneous](#miscellaneous)
 - [Other Awesome Lists](#other-awesome-lists)
@@ -180,7 +181,18 @@ mount -o remount,size=5G /tmp/
 usermod -a -G ftp john
 ```
 
+### Date & Time
+
+#### Show extended ISO format Date ([ISO 8601](http://en.wikipedia.org/wiki/ISO_8601))
+
+```sh
+date "+%Y-%m-%dT%H:%m:%S"
+# 2018-09-13T10:09:26
+```
+
 ### Network
+
+...
 
 #### Show current IP address
 

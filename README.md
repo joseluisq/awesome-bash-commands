@@ -206,19 +206,39 @@ ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ pr
 
 #### Generate random mumbers
 
+a)
+
 ```sh
 od -vAn -N64 < /dev/urandom | tr '\n' ' ' | sed "s/ //g" | head -c 32
 # 03121617301002504516642404031105
 ```
 
-_Change `head` value to trucate to expected length._
+b)
+
+```sh
+env LC_CTYPE=C tr -dc "0-9" < /dev/urandom | head -c 32 | xargs
+# 50569696992247151969921987764342
+```
+
+_Change `head` value to truncate the result's length._
 
 #### Generate a random alphanumeric
 
+a) Alphanumeric only
+
 ```sh
-od -vAn -N64 < /dev/urandom | tr '\n' ' ' | sed "s/ //g" |  base64 | sed "s/=//g" | head -c 32
-# MDUyMzQ1MDczMTM1MTM1Mzc3MDEzMzA3
+base64 /dev/urandom | tr -d '/+' | head -c 32 | xargs
+# 3udiq6F74alwcPwXzIDWSnjRYQXcxiyl
 ```
+
+b) Alphanumeric with a custom chars set
+
+```sh
+env LC_CTYPE=C tr -dc "A-Za-z0-9_!@#\$%^&*()-+=" < /dev/urandom | head -c 32 | xargs
+# yiMg^Cha=Zh$6Xh%zDQAyBH1SI6Po(&P
+```
+
+_Change `tr -dc` charset to get a custom results._
 
 #### Generate a random hash
 

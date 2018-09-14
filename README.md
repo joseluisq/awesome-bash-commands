@@ -238,7 +238,7 @@ env LC_CTYPE=C tr -dc "A-Za-z0-9_!@#\$%^&*()-+=" < /dev/urandom | head -c 32 | x
 # yiMg^Cha=Zh$6Xh%zDQAyBH1SI6Po(&P
 ```
 
-_Change `tr -dc` charset to get a custom results._
+_Change `tr -dc` charset to get a custom result._
 
 #### Generate a random hash
 
@@ -248,6 +248,13 @@ od -vAn -N64 < /dev/urandom | tr '\n' ' ' | sed "s/ //g" | openssl dgst -sha256 
 ```
 
 _Openssl digest algorithms supported: `md5`, `md4`, `md2`, `sha1`, `sha`, `sha224`, `sha256`, `sha384`, `sha512`, `mdc2` and `ripemd160`_
+
+#### Generate a random UUID
+
+```sh
+uuidgen | tr "[:lower:]" "[:upper:]"
+# D2DA7D0C-ABAA-4866-9C97-61791C9FEC89
+```
 
 #### Generate 1 million of unique random phone numbers
 This command generate one million of unique random phone numbers (random permutations) fast using GNU/Linux [shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html) command.

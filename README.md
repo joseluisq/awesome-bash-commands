@@ -94,13 +94,13 @@ _This command move all `*.js` files into `*.ts` files (move equivalent)_
 find src/ -type f -name "*.js" -exec bash -c 'mv {} `echo {} | sed -e "s/.js/.ts/g"`' \;
 ```
 
-#### Clean /tmp directory
+#### Clean temporary directory
 
 ```sh
 rm -rf /tmp/* /tmp/.*
 ```
 
-#### Calculate gzip size of one uncompress file
+#### Calculate gzip size of one no compressed file
 
 ```sh
 gzip -c FILENAME.txt | wc -c | awk '{
@@ -119,7 +119,7 @@ if ($1 > 1000 ^ 3) {
 
 ### Paths
 
-#### Show the full path of (shell) commands
+#### Show the full path of a command
 
 ```sh
 which bash
@@ -130,7 +130,7 @@ which git node
 # /usr/bin/node
 ```
 
-#### Show the resolved path of symbolic link
+#### Show the resolved path of a symbolic link
 
 ```sh
 realpath ~/www
@@ -167,7 +167,7 @@ df -h
 mount -t vfat /dev/sdb1 /media/usb
 ```
 
-#### Increase /tmp directory size
+#### Increase temporary directory size
 
 ```sh
 mount -o remount,size=5G /tmp/
@@ -191,8 +191,6 @@ date "+%Y-%m-%dT%H:%m:%S"
 ```
 
 ### Network
-
-...
 
 #### Show current IP address
 
@@ -222,7 +220,7 @@ env LC_CTYPE=C tr -dc "0-9" < /dev/urandom | head -c 32 | xargs
 
 _Change `head` value to truncate the result's length._
 
-#### Generate a random alphanumeric
+#### Generate random alphanumerics
 
 a) Alphanumeric only
 
@@ -238,7 +236,7 @@ env LC_CTYPE=C tr -dc "A-Za-z0-9_!@#\$%^&*()-+=" < /dev/urandom | head -c 32 | x
 # yiMg^Cha=Zh$6Xh%zDQAyBH1SI6Po(&P
 ```
 
-_Change `tr -dc` charset to get a custom result._
+_Change `tr -dc` char set to get a custom result._
 
 #### Generate a random hash
 

@@ -162,6 +162,28 @@ df -h --total
 # total           2.2T  600G  100G  20% -
 ```
 
+#### Display system memory information with total
+
+```sh
+free -h --total
+#               total        used        free      shared  buff/cache   available
+# Mem:           200G         60G        100G        262M         30G        180G
+# Swap:            0B          0B          0B
+# Total:         200G         60G        100G
+```
+
+or
+
+```sh
+cat /proc/meminfo
+# MemTotal:       183815530 kB
+# MemFree:        101918660 kB
+# MemAvailable:   123712410 kB
+# ....
+```
+
+_Tip: Pipe `grep` to filter your results. E.g `cat /proc/meminfo | grep MemTotal`_
+
 #### Mount a FAT32 USB device
 
 ```sh

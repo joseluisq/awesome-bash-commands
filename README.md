@@ -146,12 +146,12 @@ pwd
 
 ### Devices
 
-#### Display file system disk space usage
+#### Display file system disk space usage with total
 
 Show the file system disk space usage in human readable format.
 
 ```sh
-df -h
+df -h --total
 # Filesystem      Size  Used Avail Use% Mounted on
 # devtmpfs        487M     0  487M   0% /dev
 # tmpfs           497M     0  497M   0% /dev/shm
@@ -159,6 +159,7 @@ df -h
 # tmpfs           497M     0  497M   0% /sys/fs/cgroup
 # /dev/vda1        30G  2.7G   26G  10% /
 # tmpfs           100M     0  100M   0% /run/user/0
+# total           2.2T  600G  100G  20% -
 ```
 
 #### Mount a FAT32 USB device

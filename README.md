@@ -198,6 +198,12 @@ mount -o remount,size=5G /tmp/
 
 ### Users and Groups
 
+#### Switch user and execute command immediately
+
+```sh
+sudo -Hu root fish
+```
+
 #### Add an existing user to existing group
 
 ```sh

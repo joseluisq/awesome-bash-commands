@@ -18,7 +18,7 @@
 - [Files and directories](#files-and-directories)
 - [Paths](#paths)
 - [Devices](#devices)
-- [Users and Groups](#users-and-group)
+- [Users and Groups](#users-and-groups)
 - [Date & Time](#date--time)
 - [Network](#network)
 - [Miscellaneous](#miscellaneous)

@@ -80,6 +80,15 @@ du -sh /var/log
 # 2,2G	/var/log
 ```
 
+#### Show top ten of biggest directories
+
+```sh
+du -hS /home/user/some/directory | sort -rh | head -10
+# 90G	/home/user/some/directory/big-dir
+# 10G	/home/user/some/directory/subdir/another-big-dir
+# ...
+```
+
 #### Delete all files in directory by pattern
 
 ```sh
@@ -142,15 +151,6 @@ realpath ~/www
 ```sh
 pwd
 # /home/my/current/directory
-```
-
-#### Show top ten of biggest directories
-
-```sh
-du -hS /home/user/some/directory | sort -rh | head -10
-# 90G	/home/user/some/directory/big-dir
-# 10G	/home/user/some/directory/subdir/another-big-dir
-# ...
 ```
 
 ### Devices

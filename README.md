@@ -68,6 +68,12 @@ cp -avr /my/current/directory /destination/directory
 rsync -av /my/current/directory /destination/directory
 ```
 
+#### Copy entire directory files only to destination with exclude option
+
+```sh
+rsync -har --progress --exclude .git /current/directory/. /destination/directory
+```
+
 #### Show the space usage of file or directory
 
 Show the space usage of file or directory (recursive) in human readable format.

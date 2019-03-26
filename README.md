@@ -55,6 +55,14 @@ stat -c "%a %n" /var/www/html
 # 770 /var/www/html
 ```
 
+#### Add sticky permissions to one directory and subdirectories
+
+```sh
+find /var/www/html -type d -exec chmod g+s {} \
+```
+
+_Note: Any new file created will have the same permissions as the root folder_
+
 #### Create one empty file in current directory and subdirectories
 
 ```sh

@@ -41,6 +41,13 @@ ln -s /var/www/html ~/www
 ln -s ~/my/large/path/file.txt ~/myfile.txt
 ```
 
+#### Change permissions for a symbolic link only
+
+```sh
+chmod -h 770 ~/www
+chown -h www-data:www-data ~/www
+```
+
 #### Create one empty file in current directory and subdirectories
 
 ```sh

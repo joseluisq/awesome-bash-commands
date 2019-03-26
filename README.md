@@ -48,6 +48,13 @@ chmod -h 770 ~/www
 chown -h www-data:www-data ~/www
 ```
 
+#### Find octal permissions of one file or directory
+
+```sh
+stat -c "%a %n" /var/www/html
+# 770 /var/www/html
+```
+
 #### Create one empty file in current directory and subdirectories
 
 ```sh

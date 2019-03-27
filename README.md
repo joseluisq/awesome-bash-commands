@@ -76,7 +76,7 @@ find ./my/current/directory -name ".gitignore" -type f -delete
 ```
 
 #### Copy file content to clipboard
-Copy shell command output to cilpboard
+Copy shell command output to clipboard
 
 ```sh
 cat myfile.txt | xclip -selection c
@@ -268,7 +268,7 @@ ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ pr
 
 ### Miscellaneous
 
-#### Generate random mumbers
+#### Generate random numbers
 
 a)
 

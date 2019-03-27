@@ -108,6 +108,13 @@ du -sh /var/log
 # 2,2G	/var/log
 ```
 
+#### Show size of one symbolic link (file or directory)
+
+```sh
+du -Hsh $(which dart)
+# 21M	/usr/local/bin/dart
+```
+
 #### Show top ten of biggest directories
 
 ```sh

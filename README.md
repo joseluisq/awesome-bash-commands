@@ -275,6 +275,33 @@ ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ pr
 
 ### Miscellaneous
 
+#### Show GNU/Linux distribution and operating system
+
+a) Using `hostnamectl`:
+
+```sh
+hostnamectl | grep -E "(.+)(System|Kernel|Arch)(.+)"
+#  Operating System: Arch Linux
+#            Kernel: Linux 5.1.7-arch1-1-ARCH
+#      Architecture: x86-64
+```
+
+b) Using `cat /etc/os-release`:
+
+```sh
+cat /etc/os-release
+# NAME="Arch Linux"
+# PRETTY_NAME="Arch Linux"
+# ID=arch
+# BUILD_ID=rolling
+# ANSI_COLOR="0;36"
+# HOME_URL="https://www.archlinux.org/"
+# DOCUMENTATION_URL="https://wiki.archlinux.org/"
+# SUPPORT_URL="https://bbs.archlinux.org/"
+# BUG_REPORT_URL="https://bugs.archlinux.org/"
+# LOGO=archlinux
+```
+
 #### Generate random numbers
 
 a)

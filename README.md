@@ -115,6 +115,21 @@ du -Hsh $(which dart)
 # 21M	/usr/local/bin/dart
 ```
 
+#### Show space usage of directories and files ordered by size
+
+```sh
+du -sh /var/data/software/app/* | sort -rh
+# 1.1G	/var/data/software/app/backups
+# 223M	/var/data/software/app/logs
+# 125M	/var/data/software/app/attachments
+# 70M	/var/data/software/app/recovery
+# 1.2M	/var/data/software/app/shared-home
+# 592K	/var/data/software/app/viewfile
+# 12K	/var/data/software/app/journal
+# 4.0K	/var/data/software/app/bundled-plugins
+# 0	    /var/data/software/app/lock
+```
+
 #### Show top ten of biggest directories
 
 ```sh

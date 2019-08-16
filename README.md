@@ -75,6 +75,12 @@ find ./my/current/directory -type d -exec touch {}/.gitignore \;
 find ./my/current/directory -name ".gitignore" -type f -delete
 ```
 
+#### Delete all content of one directory but except one in specific
+
+```sh
+find ./my-directory -mindepth 1 ! -regex '^./my-directory/data\(/.*\)?' -delete
+```
+
 #### Copy file content to clipboard
 Copy shell command output to clipboard
 

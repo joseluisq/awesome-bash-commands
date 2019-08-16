@@ -40,6 +40,8 @@ ls -l --sort=extension
 ls -1 ./my-directory | wc -l
 ```
 
+_Note: use `-a` to include also dot files._
+
 #### Create a symbolic link for one directory or file
 
 ```sh

@@ -34,6 +34,12 @@ ls -l -X
 ls -l --sort=extension
 ```
 
+#### Count number of files within a directory
+
+```sh
+ls -1 ./my-directory | wc -l
+```
+
 #### Create a symbolic link for one directory or file
 
 ```sh

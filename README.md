@@ -169,9 +169,10 @@ find src/ -type f -name "*.js" -exec bash -c 'mv {} `echo {} | sed -e "s/.js/.ts
 
 #### Compress files by pattern using tar and gzip
 
-Command bellow compress a group of files by pattern using tar and gzip compression into a new file like `FILE_NAME.tar.gz`.
+Command bellow compress a group of files by pattern using tar and gzip compression into a new file like `FILE_NAME.tar.gz`. 
+No sorting guaranteed.
 
-```
+```sh
 # Input files:
 # src/file1.log.01
 # src/file1.log.02
@@ -183,6 +184,12 @@ find src/ -type f -name "file1.log.*" -exec bash -c "tar cf - {} | gzip -9 > {}.
 # src/file1.log.01.tar.gz
 # src/file1.log.02.tar.gz
 # src/file1.log.03.tar.gz
+```
+
+**Alternative sorting in ascending way:**
+
+```sh
+find . -type f -name  "file1.log.*" | sort -n | xargs -I{} sh -c "tar cf - {} | gzip -9 > {}.tar.gz && echo '{} (compressed)'"
 ```
 
 #### Clean temporary directory

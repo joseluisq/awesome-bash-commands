@@ -167,6 +167,24 @@ _This command move all `*.js` files into `*.ts` files (move equivalent)_
 find src/ -type f -name "*.js" -exec bash -c 'mv {} `echo {} | sed -e "s/.js/.ts/g"`' \;
 ```
 
+#### Compress files by pattern using tar and gzip
+
+Command bellow compress a group of files by pattern using tar and gzip compression into a new file like `FILE_NAME.tar.gz`.
+
+```
+# Input files:
+# src/file1.log.01
+# src/file1.log.02
+# src/file1.log.03
+
+find src/ -type f -name "file1.log.*" -exec bash -c "tar cf - {} | gzip -9 > {}.tar.gz" \;
+
+# Output files:
+# src/file1.log.01.tar.gz
+# src/file1.log.02.tar.gz
+# src/file1.log.03.tar.gz
+```
+
 #### Clean temporary directory
 
 ```sh

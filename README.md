@@ -180,6 +180,10 @@ No sorting guaranteed.
 
 find src/ -type f -name "file1.log.*" -exec bash -c "tar cf - {} | gzip -9 > {}.tar.gz" \;
 
+# Or using find -exec
+
+find src/ -maxdepth 1 -type f -name "file1.log.*" -exec sh -c "tar cf - {} | gzip -9 > tarballs/{}.tar.gz && echo '{} (compressed)'" \;
+
 # Output files:
 # src/file1.log.01.tar.gz
 # src/file1.log.02.tar.gz

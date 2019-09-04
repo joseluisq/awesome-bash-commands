@@ -189,8 +189,10 @@ find src/ -type f -name "file1.log.*" -exec bash -c "tar cf - {} | gzip -9 > {}.
 **Alternative sorting in ascending way:**
 
 ```sh
-find . -type f -name  "file1.log.*" | sort -n | xargs -I{} sh -c "tar cf - {} | gzip -9 > {}.tar.gz && echo '{} (compressed)'"
+find . -type f -name  "file1.log.*" | sort -n | xargs -I{} sh -c "tar cf - {} | gzip -9 > {}.tar.gz && echo '{} (compressed)'" \;
 ```
+
+__Tip:__ Use `-maxdepth` flag in order to limit directory levels finding.
 
 #### Clean temporary directory
 

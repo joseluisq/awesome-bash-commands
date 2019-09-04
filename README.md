@@ -215,19 +215,19 @@ if ($1 > 1000 ^ 3) {
 # 560K
 ```
 
-### Split out a specific file into more small files by number of lines
+#### Split out a specific file into more small files by number of lines
 
 ```sh
 split -d -l 200000 ./big_file.log small_file.log.
 
-# Output files:
+# Output files in current directory:
 # small_file.log.01
 # small_file.log.02
 # small_file.log.03
 # ....
 ```
 
-*Notes:*
+_Notes:_
 
 - `smallfile.log.` is a custom suffix for file names.
 - `200000` is a custom number of lines per file.

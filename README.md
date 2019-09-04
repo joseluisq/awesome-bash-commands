@@ -232,6 +232,14 @@ _Notes:_
 - `smallfile.log.` is a custom suffix for file names.
 - `200000` is a custom number of lines per file.
 
+#### Get only the number of lines of one specific file
+
+```sh
+wc -l big_file.log | sed -E "s/([a-z\-\_\.]|[[:space:]]*)//g"
+
+# 9249133
+```
+
 ### Paths
 
 #### Show the full path of a command

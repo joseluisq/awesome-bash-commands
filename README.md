@@ -110,6 +110,28 @@ rsync -av /my/current/directory /destination/directory
 rsync -har --progress --exclude .git /current/directory/. /destination/directory
 ```
 
+#### Transfer an entire directory content to a remote destination
+
+__Note:__ It's necessary to setup a SSH connection. You can use a [SSH Config file](https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/).
+
+```sh
+rsync -hrtpluz --progress --stats my-current-directory/. my-remote-server:/var/data/my-remote-dir
+```
+
+Options used above:
+
+```sh
+-h,                  output numbers in a human-readable format 
+-r                   recurse into directories
+-t, --times          preserve modification times
+-p, --perms          preserve permissions
+-l, --links          copy symlinks as symlinks
+-u, --update         skip files that are newer on the receiver
+-z, --compress       compress file data during the transfer
+--progress           show progress during transfer
+--stats              give some file-transfer stats
+```
+
 #### Show the space usage of file or directory
 
 Show the space usage of file or directory (recursive) in human readable format.

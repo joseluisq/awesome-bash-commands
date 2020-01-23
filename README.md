@@ -347,6 +347,17 @@ mount -t vfat /dev/sdb1 /media/usb
 mount -o remount,size=5G /tmp/
 ```
 
+#### Find out a block device by label
+
+```sh
+blkid --label MY_MICROSD
+# /dev/sdc1
+
+lsblk --output name,serial,uuid,partuuid,label,partlabel $(blkid --label MY_MICROSD)
+# NAME SERIAL UUID          PARTUUID       LABEL        PARTLABEL
+# sdc1        4BGE-7510     ec123nba-02    MY_MICROSD
+```
+
 ### Users and Groups
 
 #### Switch user and execute command immediately

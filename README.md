@@ -480,6 +480,37 @@ Use `sed` command for customize each number format. For example for add some pre
 shuf -i 100000000-999999999 -n 1000000 | sed -e 's/^/51/' > gsm.txt
 ```
 
+#### Download a file using Curl and get its stats
+
+These commands below downloads a file using Curl and get its download stats into a `curl-download-stats.log` file.
+Place the script content into a custom file `.sh` and run just it.
+
+```sh
+#!/bin/bash
+
+curl -Skw "\
+CURL download testing\n\
+=====================\n\
+URL:                    %{url_effective}\n\
+Response code:          %{response_code}\n\
+Download size:          %{size_download}B\n\
+Download speed:         %{speed_download}B/s\n\
+Time connect:           %{time_connect}s\n\
+Time name lookup:       %{time_namelookup}s\n\
+Time pretransfer:       %{time_pretransfer}\n\
+Time start transfer:    %{time_starttransfer}s\n\
+Time redirect:          %{time_redirect}s\n\
+Time total:             %{time_total}s\n" \
+-Lo /dev/null --url \
+https://ger.mirror.pkgbuild.com/iso/2020.02.01/archlinux-2020.02.01-x86_64.iso \
+> curl-download-stats.log
+```
+
+__Notes:__
+
+- For get the file into a location just replace `/dev/null` with the corresponding file path.
+- For customize the write-out format take a look at https://ec.haxx.se/usingcurl/usingcurl-verbose/usingcurl-writeout
+
 ### Other Awesome Lists
 - [awesome-shell](https://github.com/alebcay/awesome-shell)
 - [awesome-fish](https://github.com/jbucaran/awesome-fish)

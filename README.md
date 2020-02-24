@@ -212,6 +212,12 @@ find src/ -maxdepth 1 -type f -name "file1.log.*" -exec sh -c "tar cf - {} | gzi
 # src/file1.log.03.tar.gz
 ```
 
+#### Compress a directory using tar and gzip
+
+```sh
+tar -zcvf my_dir.tar.gz my-dir/
+```
+
 **Alternative sorting in ascending way:**
 
 ```sh

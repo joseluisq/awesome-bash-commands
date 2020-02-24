@@ -212,12 +212,6 @@ find src/ -maxdepth 1 -type f -name "file1.log.*" -exec sh -c "tar cf - {} | gzi
 # src/file1.log.03.tar.gz
 ```
 
-#### Compress a directory using tar and gzip
-
-```sh
-tar -zcvf my_dir.tar.gz my-dir/
-```
-
 **Alternative sorting in ascending way:**
 
 ```sh
@@ -225,6 +219,18 @@ find . -type f -name  "file1.log.*" | sort -n | xargs -I{} sh -c "tar cf - {} | 
 ```
 
 __Tip:__ Use `-maxdepth` flag in order to limit directory levels finding.
+
+#### Compress a directory using tar and gzip
+
+```sh
+tar -zcvf my_dir.tar.gz my-dir/
+```
+
+#### List content of a tar and gzip file without extracting it
+
+```sh
+tar -tvf my_dir.tar.gz | less
+```
 
 #### Clean temporary directory
 

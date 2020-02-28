@@ -232,6 +232,12 @@ tar -zcvf my_dir.tar.gz my-dir/
 tar -tvf my_dir.tar.gz | less
 ```
 
+#### Create a temporary directory with prefix
+
+```sh
+mktemp -dt "my-prefix"
+```
+
 #### Clean temporary directory
 
 ```sh

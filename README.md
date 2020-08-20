@@ -212,6 +212,16 @@ find src/ -maxdepth 1 -type f -name "file1.log.*" -exec sh -c "tar cf - {} | gzi
 # src/file1.log.03.tar.gz
 ```
 
+#### Optimizing Tar/Gzip archive size by changing content files order
+
+```sh
+find directory/* -print | rev | sort | rev | \
+      tar --create --no-recursion --files-from - | \
+      gzip -c > directory.tar.gz
+```
+
+Motivated by https://news.ycombinator.com/item?id=24221498
+
 **Alternative sorting in ascending way:**
 
 ```sh
